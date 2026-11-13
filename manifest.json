@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "ThreadLedger",
+  "version": "1.0.0",
+  "description": "Turn one open Gmail thread into a one-message-per-row timeline. Copy to Sheets or download CSV. Data stays on your device.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "ThreadLedger",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["parse.js", "promo.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage", "downloads", "activeTab", "clipboardWrite"],
+  "host_permissions": ["https://mail.google.com/*"]
+}

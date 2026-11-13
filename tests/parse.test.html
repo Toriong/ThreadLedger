@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ThreadLedger parse tests</title>
+  <style>
+    body { font: 15px/1.45 Arial, sans-serif; margin: 24px; color: #202124; }
+    .pass { color: #137333; }
+    .fail { color: #c5221f; }
+    li { margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>ThreadLedger parse tests</h1>
+  <p id="summary">Running…</p>
+  <ol id="results"></ol>
+  <script>globalThis.THREADLEDGER_UNDER_TEST = true;</script>
+  <script src="../parse.js"></script>
+  <script src="../promo.js"></script>
+  <script src="../content.js"></script>
+  <script src="run-tests.js"></script>
+</body>
+</html>
