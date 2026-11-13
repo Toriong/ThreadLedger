@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ThreadLedger">
+  <rect width="128" height="128" rx="28" fill="#1a73e8"/>
+  <defs>
+    <clipPath id="card">
+      <rect x="28" y="22" width="72" height="84" rx="6"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#card)">
+    <rect x="28" y="22" width="72" height="84" fill="#ffffff"/>
+    <rect x="28" y="22" width="72" height="18" fill="#e8f0fe"/>
+    <path d="M28 40h72M28 56h72M28 72h72M28 88h72M50 22v84" stroke="#1a73e8" stroke-width="2" fill="none"/>
+  </g>
+</svg>

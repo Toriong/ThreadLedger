@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ThreadLedger</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <h1>ThreadLedger</h1>
+    <p class="privacy">Everything stays in this browser. ThreadLedger does not send email content anywhere, and it has no account or tracking.</p>
+    <button id="inventory" type="button" hidden>Inventory this thread</button>
+    <p id="hint" class="hint"></p>
+    <section class="status" aria-label="Status">
+      <p id="export">No exports yet.</p>
+      <p id="health">No health check yet. Inventory a thread to run one.</p>
+    </section>
+    <button id="options" type="button" class="text">Options</button>
+    <div id="promo"></div>
+  </main>
+  <script src="parse.js"></script>
+  <script src="promo.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

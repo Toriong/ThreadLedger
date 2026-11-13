@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ThreadLedger options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>ThreadLedger</h1>
+    <p class="lead">ThreadLedger is ready. Open a Gmail conversation and click Inventory this thread. The button is on the conversation toolbar, in the popup, or at the bottom right if Gmail's toolbar cannot be found.</p>
+
+    <form id="settings">
+      <fieldset>
+        <legend>First line length</legend>
+        <label><input type="radio" name="length" value="100"> 100 characters</label>
+        <label><input type="radio" name="length" value="200" checked> 200 characters</label>
+        <label><input type="radio" name="length" value="500"> 500 characters</label>
+      </fieldset>
+
+      <label class="check">
+        <input id="quoted" type="checkbox">
+        Include quoted reply text in the first line
+      </label>
+      <p class="help">Off by default. Quoted history and “On … wrote:” blocks are skipped so the first line is the new text.</p>
+
+      <label class="field" for="date-format">Date format</label>
+      <select id="date-format">
+        <option value="iso">ISO 8601 (YYYY-MM-DD)</option>
+        <option value="local">Local date and time</option>
+      </select>
+      <p class="help">The original Gmail tooltip is always kept in its own column. If a tooltip cannot be parsed, the ISO cell is left blank.</p>
+
+      <label class="field" for="categories">Category suggestions</label>
+      <textarea id="categories" rows="6" spellcheck="false"></textarea>
+      <p class="help">One suggestion per line. The table also offers categories you have already typed.</p>
+      <p id="saved" class="saved" role="status"></p>
+    </form>
+
+    <section>
+      <h2>Saved notes</h2>
+      <p>Categories and notes are stored in Chrome on this device, one set per Gmail thread. Clearing them does not change Gmail.</p>
+      <button id="clear" type="button">Clear saved notes for all threads</button>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <p>ThreadLedger reads the Gmail conversation you already have open: sender, recipients, the date tooltip, subject, attachment names, and the first line of the visible message. It reads that page in your browser. It does not sign in to Google, it does not call the Gmail API, and it does not open a connection to send the mail anywhere.</p>
+      <p>There is no ThreadLedger account and no tracking. Messages, categories, and notes stay in local storage on this computer. Copy and download stay on your machine. The only outbound link is the optional Drive I/O link, and it opens only when you click it. It does not include email content.</p>
+    </section>
+
+    <div id="about"></div>
+  </main>
+  <script src="parse.js"></script>
+  <script src="promo.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
